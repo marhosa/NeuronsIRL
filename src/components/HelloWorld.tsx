@@ -2,7 +2,9 @@ const HelloWorld = ()=>{
     return(
         <>
         
-        <p>Hello World</p>
+        <p
+        className="text-blue-500 text-[50px] ml-[10vw]"
+        >Hello World</p>
         
         </>
     );

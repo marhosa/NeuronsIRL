@@ -1,6 +1,6 @@
 import { } from 'react'
 import HelloWorld from './components/HelloWorld'
-import './styles/App.css'
+import './styles/index.css'
 
 function App() {
 
