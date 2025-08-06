@@ -1,12 +1,13 @@
 import { } from 'react'
-import HelloWorld from './components/HelloWorld'
 import './styles/index.css'
+import DrawingGrid from './components/DrawingGrid'
 
 function App() {
 
   return (
     <>
-      <HelloWorld />
+    <DrawingGrid />
+      
     </>
   )
 }
