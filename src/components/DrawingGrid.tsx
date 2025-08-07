@@ -64,12 +64,19 @@ const DrawingGrid = ({grid, setGrid}: DrawingGridProps)=>{
                     <div className = 
                     {`${grid[index] === 1 ? 'bg-[#001C0A]' : colorHighlights(index)} size-[calc(40vw/16)] border border-[#b4b4b4] select-none`}
 
+                    onClick = {()=>{
+                        changeCell(index, 1);
+                        console.log('changed cell ' + index);
+                    }}
+
                     onMouseEnter = {()=>{
                         if(isMouseDown){
                             changeCell(index, 1);
-                            console.log('changed cell ' + index); //neuron changed
+                            console.log('changed cell ' + index); 
                         }
-                    }}>
+                    }}
+                    
+                    >
                     
                     </div>
                 );
