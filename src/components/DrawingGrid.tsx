@@ -1,8 +1,12 @@
 import {useState} from 'react'
 
-const DrawingGrid = ()=>{
 
-    const [grid, setGrid] = useState(Array(256).fill(0));
+type DrawingGridProps = {
+    grid: number[];
+    setGrid: React.Dispatch<React.SetStateAction<number[]>>;
+}
+
+const DrawingGrid = ({grid, setGrid}: DrawingGridProps)=>{
 
     function changeCell(index: number, value: number){
         setGrid((current)=>{
@@ -31,49 +35,64 @@ const DrawingGrid = ()=>{
     const [isMouseDown, setIsMouseDown] = useState(false);
 
     return(<>
+
     
-    <div className = 
-    "size-[40vw] m-[2vw] flex flex-wrap"
-    onMouseDown={()=>{
-        setIsMouseDown(()=>{
-            return true;
-        });
-    }}
-    onMouseUp = {()=>{
-        setIsMouseDown(()=>{
-            return false;
-        });
-    }}
-    onMouseLeave = {()=>{
-        setIsMouseDown(()=>{
-            return false;
-        });
-    }}
-    >
+    <div className="">
 
-    {
-        grid.map((_, index)=>{
-            return(
-                 <div className = 
-                 {`${grid[index] === 1 ? 'bg-[#001C0A]' : colorHighlights(index)} size-[calc(40vw/16)] border border-[#b4b4b4] select-none`}
+        <div className = 
+        "size-[40vw] m-[2vw] flex flex-wrap"
+        onMouseDown={()=>{
+            setIsMouseDown(()=>{
+                return true;
+            });
+        }}
+        onMouseUp = {()=>{
+            setIsMouseDown(()=>{
+                return false;
+            });
+        }}
+        onMouseLeave = {()=>{
+            setIsMouseDown(()=>{
+                return false;
+            });
+        }}
+        >
 
-                 onMouseEnter = {()=>{
-                    if(isMouseDown){
-                        changeCell(index, 1);
-                        console.log('changed cell ' + index); //neuron changed
-                    }
-                 }}>
-                
-                </div>
-            );
-        })
+        {
+            grid.map((_, index)=>{
+                return(
+                    <div className = 
+                    {`${grid[index] === 1 ? 'bg-[#001C0A]' : colorHighlights(index)} size-[calc(40vw/16)] border border-[#b4b4b4] select-none`}
+
+                    onMouseEnter = {()=>{
+                        if(isMouseDown){
+                            changeCell(index, 1);
+                            console.log('changed cell ' + index); //neuron changed
+                        }
+                    }}>
+                    
+                    </div>
+                );
+            })
 
 
-    }
-    
+        }
         
+            
+        </div>
+
+        <div >
+            <button className = 
+        "rounded-full bg-[#3d0066] text-amber-50 px-[10px] py-[5px] font-bold"
+        onClick = {()=>{
+            setGrid(()=>{
+                return Array(256).fill(0);
+            });
+        }}
+        >Reset</button>
+        </div>
+
     </div>
-    
     </>);
 }
 
