@@ -7,6 +7,7 @@ import ResultNumber from './components/ResultNumber'
 import NeuralNetwork from './components/NeuralNetwork'
 import NavBar from './components/NavBar'
 import Ranker from './components/Ranker'
+import RandomButton from './components/RandomButton'
 
 function App() { 
   
@@ -45,8 +46,10 @@ function App() {
       <Ranker 
       OutputLayer = {NNLayers.lf}
       />
-        <div className="mt-5">
+        <div className="mt-5 flex justify-center gap-[1vw]">
         <ResetButton  
+        setGrid = {setInputLayer}/>
+        <RandomButton
         setGrid = {setInputLayer}/>
         </div>
       </div>

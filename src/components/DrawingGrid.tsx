@@ -60,7 +60,7 @@ const DrawingGrid = ({grid, setGrid}: DrawingGridProps)=>{
     return(<>
 
     
-        <div className='border-1 border-[#ffffff] p-0 m-10 mt-3'>
+        <div className='border-1 border-[#ffffff] p-0 m-10 mt-3 cursor-pointer'>
             <div className = 
             "size-[34vw] flex flex-wrap m-0"
             onMouseDown={()=>{
