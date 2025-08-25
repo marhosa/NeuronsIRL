@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const NavBar = ()=>{
     return(
         <>
@@ -15,11 +17,15 @@ const NavBar = ()=>{
 
     <div className="flex w-[25vh] justify-between mr-[5vw]">
         <div>
-            <a className="text-[2.2vh] text-[#471396] relative after:bg-[#471396] after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Drawing Tips</a>
+            <Link to="/tips">
+                <a className="text-[2.2vh] text-[#471396] relative after:bg-[#471396] after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">Drawing Tips</a>
+            </Link>
         </div>
 
         <div>
-            <a className="text-[2.2vh] text-[#471396] relative after:bg-[#471396] after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">About</a>
+            <Link to="/about">
+                <a className="text-[2.2vh] text-[#471396] relative after:bg-[#471396] after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer">About</a>
+            </Link>
         </div>
     </div>
 

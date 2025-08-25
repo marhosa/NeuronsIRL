@@ -1,8 +1,7 @@
 const Tips = () => {
     return (
-        <div>
+        <div className="text-amber-50">
             <h1>Tips</h1>
-            <p>Welcome to the Tips page!</p>
         </div>
     );
 };

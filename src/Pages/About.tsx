@@ -1,8 +1,7 @@
 const About = () => {
     return (
-        <div>
+        <div className="text-amber-50">
             <h1>About</h1>
-            <p>Welcome to the About page!</p>
         </div>
     );
 };
