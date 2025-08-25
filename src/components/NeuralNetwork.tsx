@@ -140,7 +140,7 @@ const NeuralNetwork = ({ NNLayers }: { NNLayers: NNLayer }) => {
           ))}
 
           // draw neurons
-          {layers.map((layer, layerIndex) =>
+          {layers.map((_, layerIndex) =>
             allPositions[layerIndex].map((position, neuronIndex) => (
               <circle
                 key={`${layerIndex}-${neuronIndex}`}
