@@ -34,106 +34,92 @@ const DrawingGrid = ({grid, setGrid}: DrawingGridProps)=>{
         });
     }
 
-
-
-
-
     function colorHighlights(index: number) {
 
-        // First highlighted row
-        if (index >= (28 * 5) && index <= 55 + 28 * 5) {
-            return 'bg-[#B3C7FF]';
+        // top highlighted row
+        if (index >= (28 * 5) && index <= 55 + 28 * 4) {
+            return `bg-[#53535F]`;
         }
-        // Second highlighted row with center marker
-        else if (index >= 336 + 28 * 2&& index <= 363 + 28 * 4) {
-            // Compute row start index
-            const rowStart = 336 + 28 * 3;
-            const col = index - rowStart; // column 0..27
-
-            // 2x2 marker at center (columns 13 and 14)
-            if (col >= 13 && col <= 14) {
-                return 'bg-[#DF85FF]'; // marker color
-            }
-
-            return 'bg-[#B3FFC9]';
+        // bottom highlighted row
+        else if (index >= 672 - 28 && index <= 699 - 28 ) {
+            return `bg-[#53535F]`;
         }
-        // Third highlighted row
-        else if (index >= 672 - 28 && index <= 699 ) {
-            return 'bg-[#FFB3B3]';
+        //two centre vertical lines
+        else if(((index % 14 == 5))||((index % 14 == 8) )){
+            return `bg-[#53535F]`;
         }
         else {
-            return 'bg-[#fcfcfc]';
+            return 'bg-[#090040]';
         }
     }
 
 
- 
-
-
     const [isMouseDown, setIsMouseDown] = useState(false);
+
 
     return(<>
 
     
+        <div className='border-1 border-[#ffffff] p-0 m-10 mt-3'>
+            <div className = 
+            "size-[34vw] flex flex-wrap m-0"
+            onMouseDown={()=>{
+                setIsMouseDown(()=>{
+                    return true;
+                });
+            }}
+            onMouseUp = {()=>{
+                setIsMouseDown(()=>{
+                    return false;
+                });
+            }}
+            onMouseLeave = {()=>{
+                setIsMouseDown(()=>{
+                    return false;
+                });
+            }}
+            >
 
-        <div className = 
-        "size-[40vw] m-[2vw] flex flex-wrap"
-        onMouseDown={()=>{
-            setIsMouseDown(()=>{
-                return true;
-            });
-        }}
-        onMouseUp = {()=>{
-            setIsMouseDown(()=>{
-                return false;
-            });
-        }}
-        onMouseLeave = {()=>{
-            setIsMouseDown(()=>{
-                return false;
-            });
-        }}
-        >
+                {
+                    grid.map((_, index)=>{
 
-        {
-            grid.map((_, index)=>{
+                        let cellClass = '';
 
-                let cellClass = '';
-
-                if (grid[index] === 1) {
-                    cellClass = 'bg-[#000000]';
-                } else if (grid[index] === secondBrushWeight) {
-                    cellClass = 'bg-[#C6C6C6]';
-                } else {
-                    cellClass = colorHighlights(index); 
-                }
-
-                return(
-                    <div className = 
-                    {`${cellClass} size-[calc(40vw/28)] border border-[#b4b4b4] select-none`}
-
-                    onClick = {()=>{
-                        changeCell(index);
-                        //console.log('changed cell ' + index);
-                    }}
-
-                    onMouseEnter = {()=>{
-                        if(isMouseDown){
-                            changeCell(index);
-                            //console.log('changed cell ' + index); 
+                        if (grid[index] === 1) {
+                            cellClass = 'bg-[#FFCC00]';
+                        } else if (grid[index] === secondBrushWeight) {
+                            cellClass = 'bg-[#c79f00]';
+                        } else {
+                            cellClass = colorHighlights(index); 
                         }
-                    }}
-                    
-                    >
-                    
-                    </div>
-                );
-            })
+
+                        return(
+                            <div className = 
+                            {`${cellClass} size-[calc(34vw/28)] border border-[#000000] select-none`}
+
+                            onClick = {()=>{
+                                changeCell(index);
+                                //console.log('changed cell ' + index);
+                            }}
+
+                            onMouseEnter = {()=>{
+                                if(isMouseDown){
+                                    changeCell(index);
+                                    //console.log('changed cell ' + index); 
+                                }
+                            }}
+                            
+                            >
+                            
+                            </div>
+                        );
+                    })
 
 
-        }
-        
-            
+                }
+                
+                
+            </div>
         </div>
     </>);
 }

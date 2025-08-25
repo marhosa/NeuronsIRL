@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+
+body{
+    background-color: #080325;
+}
+
+::selection {
+  background-color: #b429ff; 
+  color: #ffd429; 
+}

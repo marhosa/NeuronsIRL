@@ -62,10 +62,12 @@ const MMForwardPasser = (inputArray: number[], passNumber: number)=>{
         }
         
         if(passNumber === 3){
-            outputArray[i] = 1 / (1 + Math.exp(-(x + biasVector[i]))); // Sigmoid
+            outputArray[i] =   1 / (1 + Math.exp(-(x + biasVector[i])));
+            // 
         }
         else{
-            outputArray[i] = Math.max(0, x + biasVector[i]); // ReLU
+            outputArray[i] =   Math.max(0, x + biasVector[i]); // ReLU
+            //
         }
         
     }

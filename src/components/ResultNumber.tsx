@@ -6,8 +6,8 @@ type Layer = {
 const ResultNumber = ({OutputLayer}: Layer)=>{
 
     return(<>
-    <p className = "text-[10vw] font-black"
-    >{OutputLayer.indexOf(Math.max(...OutputLayer))}</p>
+    <p className = "text-[1.6vw] font-black text-[#ffffff]"
+    >The predicted number is {OutputLayer.indexOf(Math.max(...OutputLayer))}</p>
 
     </>)
 }
