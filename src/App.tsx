@@ -1,9 +1,8 @@
-import Home from "./Pages/home";
-import About from "./Pages/about";
-import Tips from "./Pages/tips";
+import Home from "./Pages/Home";
+import Tips from "./Pages/Tips";
+import About from "./Pages/About";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import './styles/index.css'
-
 
 const App = ()=>{
   return(<>
