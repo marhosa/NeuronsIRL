@@ -28,9 +28,10 @@ const Ranker = ({OutputLayer}: Layer)=>{
     for(let i: number = 0 ; i < 5; i++){
         rankFive.push(<>
 
-            <div className="flex flex-row justify-around font-medium text-lg text-[#ffffff]">
+            <div className='flex flex-row justify-around font-medium text-lg text-[#ffffff]'
+            >
                 <div>{topFive[i][0]}</div>
-                <div>{Math.round(topFive[i][1] * 100)}</div>
+                <div>{(topFive[i][1] * 100).toFixed(1)}</div>
             </div>
             
 
