@@ -9,6 +9,7 @@ import Ranker from '../components/Ranker'
 import RandomButton from '../components/RandomButton'
 
 
+
 function Home() { 
   
   //This is the Input Layer 28 * 28 grid
