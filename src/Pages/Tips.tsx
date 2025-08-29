@@ -23,6 +23,11 @@ const Tips = () => {
         These are nearly required to be followed since the trained image data is usually centered, and the canvas is directly the input layer itself with no auto-centering feature added.
         </p>
 
+        <p className="text-amber-50 font-normal text-base sm:text-lg md:text-xl ml-6 sm:ml-30 mt-2">
+        - It is also recommended to draw the digit slowly.
+        </p>
+
+
         <p className="text-amber-50 font-bold text-xl sm:text-2xl md:text-3xl ml-4 sm:ml-20 mt-10">
           Examples
         </p>
@@ -41,7 +46,7 @@ const Tips = () => {
           {[
             {
               src: "images/1.jpg",
-              text: "Stroke flow follows the number 1 shape with a base and line on the top, but it can also just be a vertical line drawn at the center.",
+              text: "Stroke flow follows the number 1 shape with which is a vertical line in the middle, but it can also have the line at the top, but the base sometimes considers the digit as a number 2.",
             },
             {
               src: "images/2.jpg",

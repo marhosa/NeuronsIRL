@@ -13,17 +13,22 @@ const DrawingGrid = ({grid, setGrid}: DrawingGridProps)=>{
         setGrid((current) => {
             const temp = [...current];
             const gridWidth = 28;
-            const gridHeight = temp.length / gridWidth;
-
+            const gridHeight = gridWidth;
+            
+            //converts the 'index' into a point (row,col)
             const row = Math.floor(index / gridWidth);
             const col = index % gridWidth;
 
-            for (let dr = 0; dr <= 1; dr++) {
-                for (let dc = 0; dc <= 1; dc++) {
+            //brush size (width x height)
+            const bWidth: number = 3;
+            const bHeight: number = 2;
+
+            for (let dr = 0; dr <= bHeight - 1; dr++) {
+                for (let dc = 0; dc <= bWidth - 1; dc++) {
                     const r = row + dr;
                     const c = col + dc;
 
-                    if (r >= gridHeight || c >= gridWidth) continue;
+                    if (r >= gridHeight || c >= gridWidth) continue; //prevents overflow
 
                     const neighborIndex = r * gridWidth + c;
                     temp[neighborIndex] = temp[neighborIndex] >= secondBrushWeight ? 1 : secondBrushWeight;
