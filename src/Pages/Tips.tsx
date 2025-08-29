@@ -18,6 +18,10 @@ const Tips = () => {
         <p className="text-amber-50 font-normal text-base sm:text-lg md:text-xl ml-6 sm:ml-40 mt-2">
           - Vertical lines mark the recommended width, your digit should fit between them with a bit of space.
         </p>
+        
+        <p className="text-amber-50 font-normal text-base sm:text-lg md:text-xl ml-6 sm:ml-30 mt-2">
+        These are nearly required to be followed since the trained image data is usually centered, and the canvas is directly the input layer itself with no auto-centering feature added.
+        </p>
 
         <p className="text-amber-50 font-bold text-xl sm:text-2xl md:text-3xl ml-4 sm:ml-20 mt-10">
           Examples

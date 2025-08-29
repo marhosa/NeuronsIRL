@@ -19,7 +19,7 @@ const About = () => {
                 I built it during my third year to better understand how neural networks function.
             </p>
             <p className="text-amber-50 font-normal text-base sm:text-lg md:text-xl ml-6 sm:ml-20 mt-2">
-                The source code is available in my GitHub repository.
+                The source code is available in my <a className="text-[#4dfffc] italic" href="https://github.com/marhosa/NeuronsIRL" target="_blank">GitHub repository</a>.
             </p>
 
 
@@ -36,8 +36,9 @@ const About = () => {
                 The model was trained in Python using PyTorch.
             </p>
             <p className="text-amber-50 font-normal text-sm sm:text-base md:text-lg ml-8 sm:ml-30 mt-2">
-                It uses the MNIST dataset of handwritten digits.
+                It uses the <a className="text-[#4dfffc] italic" href="https://www.kaggle.com/competitions/mnist-digit-recognizer/data" target="_blank"> MNIST Dataset </a> of handwritten digits CSV file as the training data.
             </p>
+
 
             {/* Subheader */}
             <p className="text-amber-50 font-medium text-base sm:text-lg md:text-xl ml-6 sm:ml-20 mt-5">
@@ -48,6 +49,11 @@ const About = () => {
             </p>
             <p className="text-amber-50 font-normal text-sm sm:text-base md:text-lg ml-8 sm:ml-30 mt-2">
                 The calculations are implemented from scratch, without external libraries, using simple forward-pass matrix multiplication.
+            </p>
+
+            {/* Repo */}
+            <p className="text-amber-50 font-normal text-base sm:text-lg md:text-xl ml-6 sm:ml-20 mt-2">
+                You can find the Python code I used to train and export the weights and biases in JSON format in my <a className="text-[#4dfffc] italic" href="https://github.com/marhosa/Pytorch-NeuronsIRL" target="_blank"> Github Repository </a>.
             </p>
 
 
@@ -61,7 +67,7 @@ const About = () => {
                 nnEngine.tsx
             </p>
             <p className="text-amber-50 font-normal text-sm sm:text-base md:text-lg ml-8 sm:ml-30 mt-2">
-                This file contains the code for the model’s calculations.
+                <a className="text-[#4dfffc] italic" href="https://github.com/marhosa/NeuronsIRL/blob/main/src/nnEngine/NNengine.ts" target="_blank"> You can find the file here</a>, it contains the code for the model’s calculations.
             </p>
             <p className="text-amber-50 font-normal text-sm sm:text-base md:text-lg ml-8 sm:ml-30 mt-2">
                 It performs matrix multiplication on the weights to generate new layers, repeating until the output layer is reached.
@@ -70,7 +76,7 @@ const About = () => {
                 The operation is a vector (layer) multiplied by a matrix (weights), producing a new vector (next layer).
             </p>
             <p className="text-amber-50 font-normal text-sm sm:text-base md:text-lg ml-8 sm:ml-30 mt-2">
-                The forward-pass and vector–matrix multiplication functions are both included here.
+                The forward-pass (line 5 of the file) and vector–matrix multiplication functions (line 54 and 100 of the file) are both included here.
             </p>
 
             {/* Subheader */}
