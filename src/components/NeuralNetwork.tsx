@@ -82,7 +82,7 @@ const NeuralNetwork = ({ NNLayers }: { NNLayers: NNLayer }) => {
   };
 
 
-  console.log('---------')
+
   const neuronColorChanger = (layer: number, layerIndex: number)=>{
     let CurrentLayer: number[];
     let neuronCount: number;
@@ -113,7 +113,7 @@ const NeuralNetwork = ({ NNLayers }: { NNLayers: NNLayer }) => {
     }
     const currentNeuronMean: number = (chunkMeans(CurrentLayer, neuronCount)[layerIndex]);
     const colorValued: number =  Math.round((currentNeuronMean - Math.min(...CurrentLayer))/((Math.max(...CurrentLayer))-(Math.min(...CurrentLayer)))*scaler); //normalzied
-    console.log(`colorval: ${colorValued}  | Layer: ${layer}   Index: ${layerIndex}`)
+    
 
     return `hsl(271,100%,${colorValued}%)` 
   }

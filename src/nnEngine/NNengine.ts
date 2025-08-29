@@ -20,7 +20,6 @@ const Initialize =(InputLayer: number[])=>{
 
 const MMForwardPasser = (inputArray: number[], passNumber: number)=>{
 
-
     //processes an input layer, and returns a new layer
     let weightMatrix: number[][];
     let biasVector: number[];
@@ -61,8 +60,9 @@ const MMForwardPasser = (inputArray: number[], passNumber: number)=>{
             x += inputArray[j] * weightMatrix[i][j];
         }
         
+        //Determines what passNumber it is and will add the proper activation function
         if(passNumber === 3){
-            outputArray[i] =   1 / (1 + Math.exp(-(x + biasVector[i]))); //activation function
+            outputArray[i] =   1 / (1 + Math.exp(-(x + biasVector[i]))); //sigmoid
             
         }
         else{

@@ -2,10 +2,34 @@
 
 
 body{
-    background-color: #080325;
+    background-image: linear-gradient(to right bottom, #080325, #0e0d2e, #141337, #1b1741, #231c4a);
+    overflow-x: hidden;
 }
 
 ::selection {
   background-color: #b429ff; 
   color: #ffd429; 
 }
+
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #ffcc00 #141337;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #141337;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffcc00;
+    border-radius: 0px;
+    border: 0px groove #141337;
+  }
